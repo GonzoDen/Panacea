@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControl : MonoBehaviour
+public class Player : MonoBehaviour
 {
     Rigidbody2D rigidbody2D;
     public float speed = 3;
@@ -16,18 +16,8 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         float direction = Input.GetAxis("Horizontal");
-        Debug.Log(direction);
         rigidbody2D.velocity = new Vector2(direction * speed, rigidbody2D.velocity.y);
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Shoot();
-        }
+      
     }
-
-    void Shoot()
-    {
-        Debug.Log("POW!");
-    }
-
 
 }
